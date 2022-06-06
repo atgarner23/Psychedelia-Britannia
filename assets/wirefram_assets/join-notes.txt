@@ -1,0 +1,57 @@
+SELECT FIELDS BY TABLE
+SELECT table1.field FROM table1
+
+SELECT FIELDS BY TABLE AND ALIAS
+SELCT field AS alias FROM table
+
+WHERE
+This is essentially your filter. Defines a condition to select, update or delete records.
+may use operators including =, !=, < <=, >, >= Like And Or
+
+ORDER BY
+Sorts the results by the associated field
+
+GROUP BY
+Allos the grouping of records according to a single common field.
+
+Aggregate functions
+Count(*)
+sum(price)
+Min(price)
+max(price)
+AVG(age)
+
+#count all the posts SELECT COUNT(*) FROM posts
+output 4
+
+#count the posts in each category
+SELECT category_id, COUNT(*) AS total
+FROM posts
+GROUP BY category_id
+
+output
+category_id	total
+1		1
+2		1
+3		2
+
+JOIN
+Select data from multiple tables in a single query
+Essentially, joining refers to merging two or more tables into a single table for the query
+
+Inner join is like a vinn diagram where you can get the overlapping data
+
+#get the titles and category names of all posts
+SELECT posts.title, categories.name
+FROM posts, categories
+WHERE posts.category_id = categories.category_id
+
+
+#get the titles and category names and author info of the latest 20 posts
+SELECT posts.*, categories.*, users.username, users.profile_pic, users.user_id
+FROM posts, categories,users
+WHERE posts.category_id = categories.category_id
+AND posts.user_id = users.user_id
+AND posts.is_published = 1
+ORDER BY posts.date DESC
+LIMIT 20

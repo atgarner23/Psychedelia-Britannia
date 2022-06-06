@@ -1,0 +1,59 @@
+DAY 1 PHP
+
+information wants to be free. knowledge wants to be spread.-melissa
+
+Why are we here?
+-to learn server side languages work together with client-side technologies to build content-rich, scaling websites.
+-left brain vs. right brain
+-designers on the same page as programmers
+-know capabilities and limitations
+-designer + developer DIY - $$$
+-Design and build two sites with php and mySQL
+-End state: good foundation in programming logic
+
+How to pass this class
+-show up, be accountable
+-ask questions
+-be open to experimentation and mistakes
+-Build the MVP - minimum viable product
+-Use resources
+
+Resources
+php.net is the official manual with examples. complete list of functions and features
+Stackoverflow, quora, various other php devoted sites
+codecademy
+
+Whhen you come up with 'great ideas' add them to the wishlist and continue to build the MVP. then after that is done you can go back and add in the 'gravy'
+
+What is PHP?
+PHP is a web development language that is processed server-side and can be embedded in html
+-free, simple, flexible, well documentd and common
+-plays well with others, LAMP
+-embedded in html
+-.php
+
+Server-Side Languages
+-happens before the page is sent to the browser
+	-invisible to user
+	-Database connections, logic, user tracking, templates, form parsing, and more
+-Dynamic, Scalable Sites
+	-Social networks
+	-Web apps
+	-content management systems
+	-e-commerce
+
+Time to Escape
+
+<?php ... ?> PHP Token
+-can go anywhere on the page
+-multiple times per page, or never
+-write php code inside this token, write html outside of it
+-source code looks like normal html after pre-processing
+
+
+Using functions to keep our code DRY
+
+function my_function($param1, $param2){
+  //some code here
+};
+

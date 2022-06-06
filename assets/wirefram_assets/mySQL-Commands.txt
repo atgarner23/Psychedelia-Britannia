@@ -1,0 +1,89 @@
+The 4 basic commands of MySQL
+
+#SELECT QUERIES
+SELECT field1, field2
+FROM table
+WHERE optional conditional statement
+
+#
+SELECT title, body, date, user_id
+FROM posts
+WHERE user_id = 1 AND is_published = 1
+
+#get all the approved comments on post 2
+SELECT body, date
+FROM comments
+WHERE is_approved = 1 AND post_id = 2
+
+#show 10 posts
+SELECT *
+FROM posts
+LIMIT 10
+
+#INSERT QUERIES
+allows you to add new rows of data to a table
+INSERT INTO table
+(field1, field2, field3)
+VALUES (val1, val2, val3)
+
+#add a comment
+INSERT INTO comments
+(user_id, body, post_id, date, is_approved)
+VALUES
+(1, 'test comment', 2, now(), 0), #can be comma seperated
+(1, 'test comment', 2, now(), 0)
+
+#add a new basic user
+INSERT INTO users
+(username, password, email, is_admin, join_date)
+VALUES
+('jeffrie', 'password123', 'rick@bob.com', 0, NOW())
+
+#add 4 categories
+INSERT INTO categories
+(name)
+VALUES
+('Travel'),
+('Art'),
+('Food'),
+('Cats')
+
+#UPDATE QUERIES
+Allows you to edit existing rows of data
+IT IS VERY IMPORTANT TO SET A WHERE CONDITION OR ELSE YOU WILL CHANGE THE ENTIRE TABLE
+UPDATE table
+SET field1='text', field2=number
+WHERE condition
+
+#edit user2's email address and bio
+UPDATE users
+SET email ='newemail@mail.com', bio = 'new bio'
+WHERE user_id = 2
+
+#DELETE QUERIES
+The command to delete rows from the database. 
+THERE IS NO UNDO WITHOUT A BACKUP. IF NO WHERE CONDITION IT WILL DELETE ALL ROWS
+
+#delete user 3
+DELETE FROM users
+WHERE user_id = 3
+
+
+
+#ORDER BY and LIMIT
+At the end of a SELECT statement, you can change the order and quantity of rows returned. 
+
+ORDER BY name ASC			//Name A-Z
+ORDER BY title DESC	   //Title Z-A
+ORDER BY date DESC      //most recent date first
+ORDER BY RAND()		      //Random order		
+
+LIMIT 10						//maximum 10 records
+LIMIT 1						//maximum 1 record
+
+#get the most recent 20 published posts
+SELECT *
+FROM posts
+WHERE is_published =1
+ORDER BY date DESC
+LIMIT 20
