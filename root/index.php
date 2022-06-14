@@ -27,6 +27,7 @@
                 <h2 class="post-title">POST TITLE</h2>
                 <img src="POST_IMAGE" alt="POST_IMAGE_ALT" class="post-image-card">
                 <p class="post-descrip">POST DESCRIPTION </p>
+                <!-- TODO: finish this shit -->
 
             </div>
         </div>
