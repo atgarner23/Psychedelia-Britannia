@@ -1,9 +1,13 @@
 //define all my variables
+
+//fonts
 $open-sans: 'Open Sans', sans-serif;
 $lisbeth: lisbeth-display, sans-serif;
 $eck-small: eckmannpsych-small, sans-serif;
 $eck-med: eckmannpsych-medium, sans-serif;
 $eck-lg: eckmannpsych-large, sans-serif;
+
+//colors
 $dark-beige: #ddb892;
 $beige: #e6ccb2;
 $brown: #c68225;
@@ -17,3 +21,9 @@ $indigo: #a0c4ff;
 $purple: #bdb2ff;
 $pink: #ffc6ff;
 
+//gradients
+$gradient-bl: linear-gradient(45deg, $red, $orange, $yellow, $green, $light-blue, $indigo, $purple, $pink);
+$gradient-br: linear-gradient(to bottom right, $red, $orange, $yellow, $green, $light-blue, $indigo, $purple, $pink);
+
+//sizing
+$gutter: 1em;

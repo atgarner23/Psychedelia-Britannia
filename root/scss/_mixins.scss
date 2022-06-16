@@ -1,1 +1,9 @@
 //add in all my mixins
+@mixin card(){
+    width: 90%;
+    margin: $gutter auto;
+    padding: $gutter;
+    background-color: $off-white;
+    border: 1px solid $dark-beige;
+    border-radius: 23px;
+}

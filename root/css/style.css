@@ -1,4 +1,40 @@
 @import url("https://use.typekit.net/bcf5vwq.css");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
+body {
+  background-image: linear-gradient(to bottom right, #ffadad, #ffd6a5, #fdffb6, #caffbf, #9bf6ff, #a0c4ff, #bdb2ff, #ffc6ff);
+  min-height: 100vh;
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 10% 60% 30%;
+}
+
+.card {
+  width: 90%;
+  margin: 1em auto;
+  padding: 1em;
+  background-color: #fff7e7;
+  border: 1px solid #ddb892;
+  border-radius: 23px;
+}
+
+.flex {
+  display: flex;
+}
+
+header {
+  background-color: #ddb892;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+aside {
+  background-color: #e6ccb2;
+  height: 100vh;
+  min-height: 100vh;
+}
 
 /*# sourceMappingURL=style.css.map */

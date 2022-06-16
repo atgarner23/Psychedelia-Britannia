@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psychedelia Britannia</title>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+<div class="container">
     <header class="main-header">
         <nav>
             <ul class="main-nav">
@@ -27,7 +29,7 @@
     </header>
     <main class="main-content">
         <div class="local-nav">
-            <ul>
+            <ul class="flex">
                 <li><a href="FOLLOWING">Following</a></li>
                 <li><a href="TRENDING">Trending</a></li>
                 <li><a href="TOPICS">Topics</a></li>
@@ -37,14 +39,16 @@
         <div class="card flex">
             <div class="card-content">
                 <div class="author-info">
-                    <img src="PROFILE_PIC" alt="USERNAME" class="author-image-card">
+                    <img src="images/default-profile-pic.jpg" height="25px" width="25px" style="border-radius: 50%;" alt="USERNAME" class="author-image-card">
                     <h4 class="author-name">USERNAME</h4>
                     <h5 class="post-date">POST DATE</h5>
                 </div><!-- end author-info div-->
                 <h2 class="post-title">POST TITLE</h2>
                 <p class="post-descrip">POST DESCRIPTION </p>
             </div><!-- end card-content div-->
-            <img src="POST_IMAGE" alt="POST_IMAGE_ALT" class="post-image-card">
+            <img src="https://via.placeholder.com/150
+
+C/O https://placeholder.com/" alt="POST_IMAGE_ALT" class="post-image-card">
         </div><!-- end card div-->
     </main>
     <aside>
@@ -58,7 +62,7 @@
 
             <!-- insert a few recent articles -->
             <div>
-                <img src="PROFILE_PIC" alt="USERNAME">
+                <img src="images/default-profile-pic.jpg" height="25px" width="25px" style="border-radius: 50%;"  alt="USERNAME">
                 <h4>USERNAME</h4>
                 <h2>ARTICLE TITLE</h2>
             </div>
@@ -72,7 +76,7 @@
         <!--End Topics Div-->
         <div class="suggested-follow">
             <div class="follow-user">
-                <img src="PROFILE_PIC" alt="USERNAME">
+                <img src="images/default-profile-pic.jpg" height="25px" width="25px" style="border-radius: 50%;"  alt="USERNAME">
                 <h3>USERNAME</h3>
                 <p>BIO</p>
                 <button>FOLLOW</button>
@@ -86,7 +90,7 @@
         </div>
 
     </aside>
-
+</div>
 </body>
 
 </html>

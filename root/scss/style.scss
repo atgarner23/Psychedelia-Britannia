@@ -2,3 +2,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 @import "variables";
 @import "mixins";
+
+body {
+    background-image: $gradient-br;
+    min-height: 100vh;
+    height: 100vh;
+    font-family: $open-sans;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 10% 60% 30%;
+}
+
+.card {
+    @include card;
+}
+
+.flex {
+    display: flex;
+}
+
+header {
+    background-color: $dark-beige;
+    height: 100vh;
+    min-height: 100vh;
+}
+
+aside {
+    background-color: $beige;
+    height: 100vh;
+    min-height: 100vh;
+}
