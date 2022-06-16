@@ -36,7 +36,7 @@
                 <li><a href="PLANTS">Plants</a></li>
             </ul>
         </div>
-        <div class="card flex">
+        <div class="card flex justify-sp-bt">
             <div class="card-content">
                 <div class="author-info">
                     <img src="images/default-profile-pic.jpg" height="25px" width="25px" style="border-radius: 50%;" alt="USERNAME" class="author-image-card">
@@ -46,16 +46,15 @@
                 <h2 class="post-title">POST TITLE</h2>
                 <p class="post-descrip">POST DESCRIPTION </p>
             </div><!-- end card-content div-->
-            <img src="https://via.placeholder.com/150
-
-C/O https://placeholder.com/" alt="POST_IMAGE_ALT" class="post-image-card">
+            <img src="https://via.placeholder.com/150" alt="POST_IMAGE_ALT" class="post-image-card">
+            <!-- C/O https://placeholder.com/ -->
         </div><!-- end card div-->
     </main>
     <aside>
         <form action="search.php" method="get" class="searchform">
             <label for="" class="screen-reader-text">Search</label>
             <input type="search" name="phrase" id="phrase">
-            <input type="submit" value="Search">
+            <button type="submit">Search</button>
         </form>
         <div class="trending-articles">
             <h2>Trending Articles</h2>

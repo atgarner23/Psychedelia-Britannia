@@ -1,9 +1,62 @@
 //add in all my mixins
-@mixin card(){
+@mixin card() {
     width: 90%;
     margin: $gutter auto;
     padding: $gutter;
     background-color: $off-white;
-    border: 1px solid $dark-beige;
+    border-width: 1px;
+    border-style: solid;
+    border-image: $dark-beige;
     border-radius: 23px;
+}
+
+// Codepen by Mike Schultz https://codepen.io/mike-schultz/pen/NgQvGO
+@mixin button($bg, $fg, $size, $grad, $bdr) {
+    display: block;
+    width: fit-content;
+    padding: $size $size*2;
+    cursor: pointer;
+    border-radius: 25px;
+    // border: $size solid linear-gradient($fg, $fg);
+    background-color: $bg;
+    position: relative;
+    z-index: auto;
+    border: none;
+
+    &:link,
+    &:visited {
+        color: black;
+        text-decoration: none;
+    }
+
+    //gradient border effects
+    &::after {
+        content: '';
+        background: $fg;
+        position: absolute;
+        top: calc(-1 * $bdr);
+        left: calc(-1 * $bdr);
+        height: calc(100% + $bdr * 2);
+        width: calc(100% + $bdr * 2);
+        border-radius: 25px;
+        z-index: -1;
+    }
+
+    &:hover::after,
+    &:focus::after {
+        // border: $size solid $grad;
+
+
+        content: '';
+        position: absolute;
+        top: calc(-1 * $bdr);
+        left: calc(-1 * $bdr);
+        height: calc(100% + $bdr * 2);
+        width: calc(100% + $bdr * 2);
+        background: $grad;
+        border-radius: 25px;
+        z-index: -1;
+        animation: animatedgradient 1.5s ease alternate infinite;
+        background-size: 200% 200%;
+    }
 }

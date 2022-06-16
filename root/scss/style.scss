@@ -23,14 +23,101 @@ body {
     display: flex;
 }
 
+.button,
+button {
+    @include button($light-blue, $brown, $gutter, $gradient-bl, $border-size);
+}
+
+.justify-sp-bt {
+    justify-content: space-between;
+}
+
+.gap {
+    gap: $gutter;
+}
+
 header {
     background-color: $dark-beige;
     height: 100vh;
     min-height: 100vh;
+    padding: $gutter;
 }
 
 aside {
     background-color: $beige;
     height: 100vh;
     min-height: 100vh;
+    position: relative;
+    z-index: 0;
+    padding: $gutter;
+}
+
+// #landing-page styles
+#landing-page {
+    header {
+        height: fit-content;
+        min-height: fit-content;
+        padding: $gutter;
+    }
+
+    h2 {
+        font-family: $lisbeth;
+        font-size: 3rem;
+        color: $brown;
+        padding: 1rem;
+    }
+
+    section {
+        padding: $gutter;
+    }
+
+    h3 {
+        font-family: $lisbeth;
+        font-size: 2rem;
+        color: $brown;
+        padding: $gutter .75rem;
+    }
+
+    footer {
+        background: $dark-beige;
+        margin: 0;
+        padding: $gutter $gutter*2;
+    }
+
+    .legal {
+        margin: 0 auto;
+        width: fit-content;
+    }
+}
+
+//end landing-page styles
+
+
+//keyframes
+//for gradient border from Mike Schultz https://codepen.io/mike-schultz/pen/NgQvGO
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    25% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 0% 100%;
+    }
+
+    75% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+
+    // 100% {
+    //     background-position: 0% 50%;
+    // }
+
 }
