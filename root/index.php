@@ -1,27 +1,9 @@
 <!-- TODO: add in logged in user function to only show this page to users that aren't logged in or don't have an account -->
-<!DOCTYPE html>
-<html lang="en">
+<?php 
+//includes
+require('includes/header-no-login.php');
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psychedelia Brittania</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body id="landing-page">
-    <!-- Initial landing page if user is not logged in or no account exists-->
-    <header>
-        <nav class="log-in flex justify-sp-bt">
-            <h1 class="logo"><a href="#">Psychedelia Brittania</a></h1>
-            <ul class="flex gap">
-                <li><a href="login.php">Log In</a></li>
-                <li><a href="register.php">Sign Up</a></li>
-            </ul>
-        </nav>
-    </header>
     <main>
         <div class="main-content card">
             <div class="hero">
@@ -49,18 +31,5 @@
             </div>
         </div>
     </main>
-    <footer>
-        <div class="legal">
-            <ul>
-                <li><a href="tos.html">Terms Of Service</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="customer-service">Customer Service</a></li>
-                <li><a href="disclaimer">Legal Disclaimer</a></li>
-            </ul>
-            <small>&copy; Psychedelia Brittania 2022</small>
-            <small><a href="https://www.agarnerdesigns.com">Site Design by A. Garner Designs</a></small>
-        </div>
-    </footer>
-</body>
-
-</html>
+    
+    <?php require('includes/footer.php'); ?>

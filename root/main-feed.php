@@ -1,32 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Psychedelia Britannia</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-<div class="container">
-    <header class="main-header">
-        <nav>
-            <ul class="main-nav">
-                <li><a href="main-feed.php">Home</a></li>
-                <li><a href="PLANTS PAGE">Plants</a></li>
-                <li><a href="NOTIFICATIONS PAGE">Notifications</a></li>
-                <li><a href="BOOKMARKS PAGE">Bookmarks</a></li>
-                <li><a href="TOPICS PAGE">Topics</a></li>
-                <li><a href="JOURNAL PAGE">Journal</a></li>
-                <li><a href="MY POSTS PAGE">Posts</a></li>
-                <li><a href="LISTS PAGE">Lists</a></li>
-                <li><a href="MY PROFILE PAGE">Profile</a></li>
-            </ul>
-        </nav>
-    </header>
+<?php 
+//includes
+require('includes/header.php');
+?>
     <main class="main-content">
         <div class="local-nav">
             <ul class="flex">
@@ -50,45 +25,7 @@
             <!-- C/O https://placeholder.com/ -->
         </div><!-- end card div-->
     </main>
-    <aside>
-        <form action="search.php" method="get" class="searchform">
-            <label for="" class="screen-reader-text">Search</label>
-            <input type="search" name="phrase" id="phrase">
-            <button type="submit">Search</button>
-        </form>
-        <div class="trending-articles">
-            <h2>Trending Articles</h2>
-
-            <!-- insert a few recent articles -->
-            <div>
-                <img src="images/default-profile-pic.jpg" height="25px" width="25px" style="border-radius: 50%;"  alt="USERNAME">
-                <h4>USERNAME</h4>
-                <h2>ARTICLE TITLE</h2>
-            </div>
-        </div>
-        <!--End trending-articles div-->
-        <div class="topics">
-            <ul class="topics">
-                <li class="topic"><a href="TOPIC">TOPIC</a></li>
-            </ul>
-        </div>
-        <!--End Topics Div-->
-        <div class="suggested-follow">
-            <div class="follow-user">
-                <img src="images/default-profile-pic.jpg" height="25px" width="25px" style="border-radius: 50%;"  alt="USERNAME">
-                <h3>USERNAME</h3>
-                <p>BIO</p>
-                <button>FOLLOW</button>
-            </div>
-            <!--End Follow User-->
-        </div>
-        <!--End Who to follow-->
-
-        <div class="footer">
-            FOOTER LEGAL BS GOES HERE LIKE TOS CUSTOMER SUPPORT HELP CONTACT
-        </div>
-
-    </aside>
+    <?php require('includes/aside.php') ?>
 </div>
 </body>
 
