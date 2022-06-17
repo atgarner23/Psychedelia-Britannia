@@ -1,4 +1,5 @@
 <aside>
+        <a href="login.php?action=logout" class="button">Log Out</a>
         <form action="search.php" method="get" class="searchform">
             <label for="" class="screen-reader-text">Search</label>
             <input type="search" name="phrase" id="phrase">

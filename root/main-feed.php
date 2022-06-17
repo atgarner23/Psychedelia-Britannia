@@ -1,6 +1,15 @@
 <?php 
 //includes
+require('includes/CONFIG.php');
+require_once('includes/functions.php');
+$logged_in_user = check_login();
+
 require('includes/header.php');
+
+//kill the page if not logged in
+if (!$logged_in_user) {
+    header("Location:index.php");
+}
 ?>
     <main class="main-content">
         <div class="local-nav">
