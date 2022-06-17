@@ -14,7 +14,7 @@
     <!-- Initial landing page if user is not logged in or no account exists-->
     <header>
         <nav class="log-in flex justify-sp-bt">
-            <h1 class="logo"><a href="#">Psychedelia Brittania</a></h1>
+            <h1 class="logo"><a href="index.php">Psychedelia Brittania</a></h1>
             <ul class="flex gap">
                 <li><a href="login.php">Log In</a></li>
                 <li><a href="register.php">Sign Up</a></li>
