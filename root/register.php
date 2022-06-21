@@ -23,7 +23,7 @@ require('includes/header-no-login.php');
 
         <label>
             <input type="checkbox" name="policy" value="1" <?php checked($policy, 1); ?> class="<?php field_error('policy', $errors); ?>">
-            I agree to the <a href="#" target="_blank">terms of use and privacy policy</a>
+            I agree to the <a href="tos.php" target="_blank">terms of service</a> and <a href="privacy.php" target="_blank">privacy policy</a>
         </label>
 
         <input type="submit" value="Sign Up">

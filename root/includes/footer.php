@@ -1,8 +1,8 @@
 <footer>
         <div class="legal">
             <ul>
-                <li><a href="tos.html">Terms Of Service</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="tos.php">Terms Of Service</a></li>
+                <li><a href="privacy.php">Privacy Policy</a></li>
                 <li><a href="customer-service">Customer Service</a></li>
                 <li><a href="disclaimer">Legal Disclaimer</a></li>
             </ul>
@@ -13,3 +13,5 @@
 </body>
 
 </html>
+
+

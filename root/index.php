@@ -3,6 +3,11 @@
 //includes
 require('includes/CONFIG.php');
 require_once('includes/functions.php');
+
+$logged_in_user = check_login();
+if(isset($logged_in_user['user_id'])){
+    header('Location: main-feed.php');
+}
 require('includes/header-no-login.php');
 ?>
 
