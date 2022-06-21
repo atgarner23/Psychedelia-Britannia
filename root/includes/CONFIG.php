@@ -61,3 +61,4 @@ $DB = new PDO(
         PDO::ATTR_PERSISTENT => false
     )
 );
+session_start();

@@ -50,6 +50,7 @@ if (!$logged_in_user) {
                 <p class="post-descrip"><?php echo $body; ?> </p>
             </div><!-- end card-content div-->
             <img src="<?php echo $image; ?>" alt="POST_IMAGE_ALT" class="post-image-card">
+            <a href="single.php?post_id=<?php echo $post_id; ?>">Read More &rarr;</a>
             <!-- C/O https://placeholder.com/ -->
         </div><!-- end card div-->
         
