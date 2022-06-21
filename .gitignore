@@ -2,3 +2,4 @@
 assets/*
 root/includes/CONFIG.php 
 *.sql
+*.DS-STORE
