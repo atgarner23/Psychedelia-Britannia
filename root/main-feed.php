@@ -20,21 +20,55 @@ if (!$logged_in_user) {
                 <li><a href="PLANTS">Plants</a></li>
             </ul>
         </div>
-        <div class="card flex justify-sp-bt">
+
+
+
+        <?php //get up to 20 published posts, newest first
+	$result = $DB->prepare('SELECT posts.*, users.username, users.profile_pic, users.user_id
+							FROM posts, users
+							WHERE posts.user_id = users.user_id
+							AND posts.is_published = 1
+							ORDER BY posts.date DESC
+							LIMIT 20');
+	$result->execute();
+	//check if any rows were found
+	if ($result->rowCount() >= 1) {
+		while ($row = $result->fetch()) {
+			//make variables from the array keys
+			extract($row);
+	?>
+		<div class="card flex justify-sp-bt">
             <div class="card-content">
                 <div class="author-info">
-                    <img src="images/default-profile-pic.jpg" height="25px" width="25px" style="border-radius: 50%;" alt="USERNAME" class="author-image-card">
-                    <h4 class="author-name">USERNAME</h4>
-                    <h5 class="post-date">POST DATE</h5>
+                    <!-- <img src="images/default-profile-pic.jpg" height="25px" width="25px" style="border-radius: 50%;" alt="USERNAME" class="author-image-card"> -->
+
+                    <?php show_profile_pic($profile_pic, 'round', $username, 25); ?>
+                    <h4 class="author-name"><?php echo $username; ?></h4>
+                    <h5 class="post-date"><?php echo convert_date($date); ?></h5>
                 </div><!-- end author-info div-->
-                <h2 class="post-title">POST TITLE</h2>
-                <p class="post-descrip">POST DESCRIPTION </p>
+                <h2 class="post-title"><?php echo $title; ?></h2>
+                <p class="post-descrip"><?php echo $body; ?> </p>
             </div><!-- end card-content div-->
-            <img src="https://via.placeholder.com/150" alt="POST_IMAGE_ALT" class="post-image-card">
+            <img src="<?php echo $image; ?>" alt="POST_IMAGE_ALT" class="post-image-card">
             <!-- C/O https://placeholder.com/ -->
         </div><!-- end card div-->
+        
+
+
+        <?php
+		} //end while	
+	} else {
+		//no rows found from our query
+		echo 'No posts found';
+	} //end else 
+	?>
+
+
+
+
     </main>
-    <?php require('includes/aside.php') ?>
+    <?php require('includes/aside.php'); ?>
+    <?php require('includes/debug-output.php'); ?>
 </div>
 </body>
 

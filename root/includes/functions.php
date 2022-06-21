@@ -231,16 +231,20 @@ function check_login()
 }
 
 /**
- * 
+ * Creates a profile picture IMG tag
+ * @param $src string image sorce
+ * @param $class string class name
+ * @param $alt string image alt text
+ * @param $size int the width and height measurement
  */
-function show_profile_pic($src, $alt = 'Profile Picture', $size = '50')
+function show_profile_pic($src, $class, $alt = 'Profile Picture', $size = '50')
 {
     //check if src is blank
     if ($src == '') {
-        $src = ROOT_URL . '/images/default_user.png';
+        $src = ROOT_URL . '/images/default-profile-pic.jpg';
     }
     ?>
-    <img width="<?php echo $size; ?>" height="<?php echo $size; ?>" src="<?php echo $src ?>" alt="<?php echo $alt ?>">
+    <img width="<?php echo $size; ?>" height="<?php echo $size; ?>" src="<?php echo $src; ?>" alt="<?php echo $alt; ?>" class="<?php echo $class; ?>
 <?php
 }
 

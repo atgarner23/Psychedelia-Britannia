@@ -21,6 +21,7 @@ body {
   border-style: solid;
   border-image: #ddb892;
   border-radius: 23px;
+  overflow: hidden;
 }
 
 .flex {
@@ -81,6 +82,10 @@ button:focus::after {
   gap: 1em;
 }
 
+.round {
+  border-radius: 50%;
+}
+
 header {
   background-color: #ddb892;
   height: 100vh;
@@ -95,6 +100,14 @@ aside {
   position: relative;
   z-index: 0;
   padding: 1em;
+}
+
+.post-descrip {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-width: 60ch;
 }
 
 #landing-page header {
