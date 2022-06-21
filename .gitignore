@@ -1,3 +1,4 @@
 
 assets/*
 root/includes/CONFIG.php 
+*.sql
