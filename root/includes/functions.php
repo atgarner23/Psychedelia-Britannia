@@ -237,14 +237,14 @@ function check_login()
  * @param $alt string image alt text
  * @param $size int the width and height measurement
  */
-function show_profile_pic($src, $class, $alt = 'Profile Picture', $size = '50')
+function show_profile_pic($src, $class = 'round', $alt = 'Profile Picture', $size = '50')
 {
     //check if src is blank
     if ($src == '') {
         $src = ROOT_URL . '/images/default-profile-pic.jpg';
     }
     ?>
-    <img width="<?php echo $size; ?>" height="<?php echo $size; ?>" src="<?php echo $src; ?>" alt="<?php echo $alt; ?>" class="<?php echo $class; ?>
+    <img width="<?php echo $size; ?>" height="<?php echo $size; ?>" src="<?php echo $src; ?>" alt="<?php echo $alt; ?>" class="<?php echo $class; ?>">
 <?php
 }
 

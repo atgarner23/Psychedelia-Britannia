@@ -12,6 +12,7 @@ if ($post_id < 0) {
 }
 
 require('includes/header.php');
+require('includes/parse-comment.php');
 
 //kill the page if not logged in
 if (!$logged_in_user) {
@@ -69,7 +70,19 @@ if (!$logged_in_user) {
             <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>">
             <p class="post-body"><?php echo $body; ?></p>
 
-
+            <?php 
+            //only show the comment form if this post has comments enabled
+            if ($allow_comments) {
+                if ($logged_in_user) {
+                    include('includes/comment-form.php');
+                } else {
+                    echo 'Please Log In to leave a comment.';
+                }
+            } else {
+                echo '<div class ="message">Comments Closed.</div>';
+            } //close if allow_comments
+            include('includes/comments.php');
+            ?>
             <!-- TODO: Add comments form
                        Add comments section
                         Add shareable and likes -->
