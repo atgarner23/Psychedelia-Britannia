@@ -5,9 +5,33 @@
             <button type="submit">Search</button>
         </form>
 
-        <h1><?php echo $post_id; ?></h1>
-        <!-- i am getting the post id of the post from single.php 
-        I need to get the user info by referencing that post id and then generate the author card on this aside -->
+
+        <?php 
+        $result = $DB->prepare('SELECT users.user_id, users.profile_pic, users.username, users.bio, posts.post_id, posts.user_id
+                                FROM users, posts
+                                WHERE posts.user_id = users.user_id
+                                AND posts.post_id = ?
+                                LIMIT 1');
+        $result->execute(array($post_id));
+        if($result->rowCount() >= 1){
+            while($row = $result->fetch()){
+                extract($row);
+         ?>
+        <div class="author">
+            <div class="flex">
+                    <?php show_profile_pic($profile_pic, 'round', $username, 25); ?>
+                    <h4 class="author-name"><?php echo $username; ?></h4>
+            </div>
+            <p class="bio"><?php echo $bio; ?></p>
+            <button>FOLLOW</button>
+            <?php
+               }
+            }
+            ?>
+                    
+        </div><!-- end author div-->
+
+
         <div class="trending-articles">
             <h2>Trending Articles</h2>
 
