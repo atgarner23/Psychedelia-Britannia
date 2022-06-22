@@ -1,5 +1,5 @@
 # TODO
-
+* creat user card function similar to show profile pic
 
 
 * create markup for individual profile page

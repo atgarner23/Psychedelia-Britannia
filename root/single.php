@@ -105,7 +105,7 @@ if (!$logged_in_user) {
 
 
     </main>
-    <?php require('includes/aside.php'); ?>
+    <?php require('includes/aside-single.php'); ?>
     <?php require('includes/debug-output.php'); ?>
 </div>
 </body>

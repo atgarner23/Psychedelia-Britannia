@@ -1,10 +1,13 @@
 <aside>
-        <a href="login.php?action=logout" class="button">Log Out</a>
         <form action="search.php" method="get" class="searchform">
             <label for="" class="screen-reader-text">Search</label>
             <input type="search" name="phrase" id="phrase">
             <button type="submit">Search</button>
         </form>
+
+        <h1><?php echo $post_id; ?></h1>
+        <!-- i am getting the post id of the post from single.php 
+        I need to get the user info by referencing that post id and then generate the author card on this aside -->
         <div class="trending-articles">
             <h2>Trending Articles</h2>
 
@@ -59,34 +62,7 @@
             
         </div>
         <!--End Topics Div-->
-        <div class="suggested-follow">
-            <h2>Who to Follow</h2>
-
-            <?php 
-            //get 3 random users and display them here
-            $result = $DB->prepare('SELECT * FROM users ORDER BY RAND() LIMIT 3');
-            $result->execute();
-            if($result->rowCount() >= 1){
-                while($row = $result->fetch()){
-                    //make variables from the array keys
-                    extract($row);
-            ?>
-            <div class="follow-user">
-            <?php show_profile_pic($profile_pic, 'round', $username, 25); ?>
-                    <h4 class="author-name"><?php echo $username; ?></h4>
-                <p><?php echo $bio; ?></p>
-                <button>FOLLOW</button>
-            </div>
-            <?php 
-                }//end while
-            }else{
-                //no rows found
-                echo 'No Topics Found';
-            }//end else
-            ?>
-            <!--End Follow User-->
-        </div>
-        <!--End Who to follow-->
+        
 
         <div class="footer">
             <?php require('includes/footer.php'); ?>
