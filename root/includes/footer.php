@@ -1,4 +1,5 @@
 <footer>
+    <hr>
         <div class="legal">
             <ul>
                 <li><a href="tos.php">Terms Of Service</a></li>

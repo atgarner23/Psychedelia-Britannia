@@ -5,6 +5,8 @@
 
 body {
     background-image: $gradient-br;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
     height: 100vh;
     font-family: $open-sans;

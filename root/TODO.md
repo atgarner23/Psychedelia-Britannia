@@ -1,5 +1,6 @@
 # TODO
 * creat user card function similar to show profile pic
+* create account managment page
 
 
 * create markup for individual profile page
@@ -26,3 +27,4 @@
 * create mark up for single post
 * add comments section to single post
 * Add comments form
+* create profile page
