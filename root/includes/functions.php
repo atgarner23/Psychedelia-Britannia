@@ -249,26 +249,53 @@ function show_profile_pic($src, $class = 'round', $alt = 'Profile Picture', $siz
 }
 
 /**
- * Category Dropdown Display - displays an HTML dropdown input of all categories in alpha order
+ * Topic Dropdown Display - displays an HTML dropdown input of all Topics in alpha order
  * @param 
  * @return mixed HTML the <select> populated withe <option>s
  */
-function category_dropdown($default = 0)
+function topic_dropdown($default = 0)
 {
     global $DB;
-    $result = $DB->prepare('SELECT * FROM categories ORDER BY name ASC');
+    $result = $DB->prepare('SELECT * FROM topics ORDER BY name ASC');
     $result->execute();
     if ($result->rowCount()) {
-        echo '<select name="category_id">';
-        echo '<option>Choose a Category</option>';
+        echo '<select name="topic_id">';
+        echo '<option>Choose a Topic</option>';
         while ($row = $result->fetch()) {
             extract($row);
-            if ($default == $category_id) {
+            if ($default == $topic_id) {
                 $atts = 'selected';
             } else {
                 $atts = '';
             }
-            echo "<option value='$category_id' $atts>$name</option>";
+            echo "<option value='$topic_id' $atts>$name</option>";
+        }
+        echo '</select>';
+    }
+}
+
+
+/**
+ * Plants Dropdown Display - displays an HTML dropdown input of all categories in alpha order
+ * @param 
+ * @return mixed HTML the <select> populated withe <option>s
+ */
+function plant_dropdown($default = 0)
+{
+    global $DB;
+    $result = $DB->prepare('SELECT * FROM plants ORDER BY name ASC');
+    $result->execute();
+    if ($result->rowCount()) {
+        echo '<select name="plant_id">';
+        echo '<option>Choose a plant</option>';
+        while ($row = $result->fetch()) {
+            extract($row);
+            if ($default == $plant_id) {
+                $atts = 'selected';
+            } else {
+                $atts = '';
+            }
+            echo "<option value='$plant_id' $atts>$name</option>";
         }
         echo '</select>';
     }

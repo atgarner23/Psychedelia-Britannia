@@ -18,7 +18,7 @@ require('includes/header.php');
             <li><a href="POSTS">Posts</a></li><!--Public Posts-->
             <li><a href="JOURNAL">Journal</a></li><!--Private Posts-->
         </ul>
-        <button class="new-post">New Post</button>
+        <a href="new-post.php" class="button new-post">New Post</a>
         <button class="more">more</button>
     </div>
 		<?php
