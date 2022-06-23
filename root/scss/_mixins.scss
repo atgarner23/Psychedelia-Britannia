@@ -11,12 +11,12 @@
 }
 
 // Codepen by Mike Schultz https://codepen.io/mike-schultz/pen/NgQvGO
-@mixin button($bg, $fg, $size, $grad, $bdr) {
+@mixin button($bg, $fg, $size, $grad, $bdr, $br) {
     display: block;
     width: fit-content;
-    padding: $size $size*2;
+    padding: $size*.5 $size;
     cursor: pointer;
-    border-radius: 25px;
+    border-radius: $br;
     // border: $size solid linear-gradient($fg, $fg);
     background-color: $bg;
     position: relative;
@@ -38,7 +38,7 @@
         left: calc(-1 * $bdr);
         height: calc(100% + $bdr * 2);
         width: calc(100% + $bdr * 2);
-        border-radius: 25px;
+        border-radius: $br;
         z-index: -1;
     }
 
@@ -54,7 +54,7 @@
         height: calc(100% + $bdr * 2);
         width: calc(100% + $bdr * 2);
         background: $grad;
-        border-radius: 25px;
+        border-radius: $br;
         z-index: -1;
         animation: animatedgradient 1.5s ease alternate infinite;
         background-size: 200% 200%;

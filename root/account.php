@@ -41,17 +41,18 @@ require('includes/header.php');
 				while ($row = $result->fetch()) {
 					extract($row);
 				?>
-					<div class="one-post card">
-						<a href="single.php?post_id=<?php echo $post_id; ?>">
-							<?php show_post_image($image, 'small') ?>
-
-						</a>
-						<h2><?php echo $row['title']; ?></h2>
-
-						<span class="topic"><?php echo $name; ?></span>
-						<span class="date"><?php echo time_ago($date); ?></span>
-						<span class="comment-count"><?php echo count_comments($post_id); ?> Comments</span>
-					</div>
+					<div class="card">
+            <div class="card-content flex justify-sp-bt">
+               <div class="card-body">
+                <h2 class="post-title"><?php echo $title; ?></h2>
+                <p class="post-descrip"><?php echo $body; ?> </p>
+				</div> 
+				<?php show_post_image($image, 'small', $title); ?>
+            </div><!-- end card-content div-->
+            
+            <a href="single.php?post_id=<?php echo $post_id; ?>">Read More &rarr;</a>
+            <!-- C/O https://placeholder.com/ -->
+        </div><!-- end card div-->
 
 				<?php } //end while loop
 				?>
@@ -59,7 +60,7 @@ require('includes/header.php');
 		<?php } else { ?>
 
 			<div class="feedback info">
-				<p>This user hasn't posted any public images</p>
+				<p>This user doesn't have any public posts</p>
 			</div>
 
 	<?php

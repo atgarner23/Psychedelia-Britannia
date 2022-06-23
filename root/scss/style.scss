@@ -28,7 +28,7 @@ body {
 
 .button,
 button {
-    @include button($light-blue, $brown, $gutter, $gradient-bl, $border-size);
+    @include button($light-blue, $brown, $gutter, $gradient-bl, $border-size, $border-radius);
 }
 
 .justify-sp-bt {

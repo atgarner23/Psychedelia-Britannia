@@ -40,8 +40,6 @@ if (!$logged_in_user) {
 		<div class="card flex justify-sp-bt">
             <div class="card-content">
                 <div class="author-info">
-                    <!-- <img src="images/default-profile-pic.jpg" height="25px" width="25px" style="border-radius: 50%;" alt="USERNAME" class="author-image-card"> -->
-
                     <?php show_profile_pic($profile_pic, 'round', $username, 25); ?>
                     <h4 class="author-name"><?php echo $username; ?></h4>
                     <h5 class="post-date"><?php echo convert_date($date); ?></h5>

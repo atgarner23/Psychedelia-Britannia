@@ -1,18 +1,17 @@
 # TODO
-* creat user card function similar to show profile pic
+* creat author card function similar to show profile pic
+* post card function
 * create account managment page
-
-
-* create markup for individual profile page
 * css layout
 * css styling
 * chunk down mark up into includes
-
 * create icons for nav
 * implement icons for nav
-
 * Add shareable links 
 * add likes
+* private posts
+* edit posts
+* 
 
 # DONE
 * create mark up for main feed
@@ -28,3 +27,5 @@
 * add comments section to single post
 * Add comments form
 * create profile page
+* create markup for individual profile page
+* create new post functionality
