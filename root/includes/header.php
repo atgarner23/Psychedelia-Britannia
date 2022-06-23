@@ -24,7 +24,7 @@
                 <li><a href="JOURNAL PAGE">Journal</a></li>
                 <li><a href="MY POSTS PAGE">Posts</a></li>
                 <li><a href="LISTS PAGE">Lists</a></li>
-                <li><a href="MY PROFILE PAGE">Profile</a></li>
+                <li><a href="account.php">Profile</a></li>
             </ul>
         </nav>
     </header>

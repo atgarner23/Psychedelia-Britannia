@@ -30,11 +30,12 @@ if (!$logged_in_user) {
         <label for="body">Body:</label>
         <textarea name="body" id="body" cols="30" rows="10"></textarea>
 
+        <input type="checkbox" name="is_public" id="is_public" value="1">
         <label for="is_public">Make post public</label>
-        <input type="checkbox" name="is_public" id="is_public">
+        
+        <input type="checkbox" name="allow_comments" id="allow_comments" value="1">
+        <label for="allow_comments">Allow Comments</label>
 
-        <label for="allow_comments">Allow Comments:</label>
-        <input type="checkbox" name="allow_comments" id="allow_comments">
 
         <?php topic_dropdown();
         plant_dropdown(); ?>
@@ -43,7 +44,7 @@ if (!$logged_in_user) {
             dropdown for plant id
             dropdown for topic id -->
 
-        <input type="submit" value="Publish Post">
+        <input type="submit" value="Next &rarr;">
         <input type="hidden" name="did_submit">
     </form>
 </main>

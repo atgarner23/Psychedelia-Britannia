@@ -118,7 +118,7 @@ function clean_int($dirty)
 /**
  * 
  */
-function clean_boolean($dirty)
+function clean_boolean(&$dirty)
 {
     if ($dirty) {
         return 1;
@@ -311,7 +311,7 @@ function plant_dropdown($default = 0)
 function show_post_image($unique, $size = 'medium', $alt = '')
 {
     $url = "uploads/$unique" . '_' . "$size.jpg";
-    echo "<img src='$url' alt='$alt' class='post-image is-$size'>";
+    echo "<img src='$url' alt='$alt' class='post-image is-$size post-image-card'>";
 }
 
 /**

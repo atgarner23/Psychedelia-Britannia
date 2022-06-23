@@ -1,24 +1,20 @@
 <?php
 
 $errors = array();
-
-//which post are we trying to edit
-
-//URL will look like edit-post.php?post_id=X
-// if (isset($_GET['post_id'])) {
-//     $post_id = filter_var($_GET['post_id'], FILTER_SANITIZE_NUMBER_INT);
-// } else {
-//     exit('No post to edit');
-// }
+$allow_comments = false;
+$is_public = false;
 
 //parse the form if they hit submit
 if (isset($_POST['did_submit'])) {
     //sanitize everything
     $title = clean_string($_POST['title']);
+    $subtitle = clean_string($_POST['subtitle']);
     $body = clean_string($_POST['body']);
-    $category_id = clean_int($_POST['category_id']);
+    $topic_id = clean_int($_POST['topic_id']);
+    $plant_id = clean_int($_POST['plant_id']);
     $allow_comments = clean_boolean($_POST['allow_comments']);
-    $is_published = clean_boolean($_POST['is_published']);
+    $is_public = clean_boolean($_POST['is_public']);
+    //$is_published = clean_boolean($_POST['is_published']);
     //validate
     $valid = true;
     //title blank or longer than 50
@@ -27,49 +23,49 @@ if (isset($_POST['did_submit'])) {
         $errors['title'] = 'Create a title between 1 &ndash; 50 characters long.';
     }
     //body longer than 500
-    if (strlen($body) > 500) {
+    if (strlen($body) > 10000) {
         $valid = false;
-        $errors['body'] = 'Post caption must be shorter than 500 characters';
+        $errors['body'] = 'Post caption must be shorter than 10,000 characters';
     }
-    //category must be positive int
-    if ($category_id < 1) {
+    //topic must be positive int
+    if ($topic_id < 1) {
         $valid = false;
-        $errors['category_id'] = 'Choose a valid category';
+        $errors['topic_id'] = 'Choose a valid topic';
+    }
+    //plant must be positive int
+    if ($plant_id < 1) {
+        $valid = false;
+        $errors['plant_id'] = 'Choose a valid plant';
     }
 
     //if valid, update the post in the DB
     if ($valid) {
-        $result = $DB->prepare('UPDATE posts
-                                SET 
-                                title = :title,
-                                body = :body,
-                                category_id = :cat,
-                                allow_comments = :allow,
-                                is_published = :published
-                                WHERE post_id = :post_id
-                                AND user_id = :user_id
-                                LIMIT 1');
+        $result = $DB->prepare('INSERT INTO posts
+                                (date, body, is_public, is_published, allow_comments, image, title, topic_id, user_id, plant_id, subtitle)
+                                VALUES
+                                (now(), :body, :public, 1, :comments, "", :title, :topic, :user, :plant, :subtitle)');
         $result->execute(array(
-            'title' => $title,
             'body' => $body,
-            'cat' => $category_id,
-            'allow' => $allow_comments,
-            'published' => $is_published,
-            'post_id' => $post_id,
-            'user_id' => $logged_in_user['user_id']
+            'public' => $is_public,
+            'comments' => $allow_comments,
+            'title' => $title,
+            'topic' => $topic_id,
+            'user' => $logged_in_user['user_id'],
+            'plant' => $plant_id,
+            'subtitle' => $subtitle,
         ));
         if ($result->rowCount()) {
-            //success
-            $feedback = 'Changes successfully saved';
-            $feedback_class = 'success';
+            //what post just got added?
+            $post_id = $DB->lastInsertId();
+            header("Location:photo-upload.php?post_id=$post_id");
         } else {
             //error - no changes made
-            $feedback = 'No changes made to this post';
+            $feedback = 'Something went wrong. Please try again.';
             $feedback_class = 'info';
         } //end if rowCount
     } else {
         //handle feedback
-        $feedback = 'Couldn\'t save your post. Please fix the following:';
+        $feedback = 'Couldn\'t upload your post. Please fix the following:';
         $feedback_class = 'error';
     }
 } //end if did edit
