@@ -1,5 +1,4 @@
 <aside>
-        <a href="login.php?action=logout" class="button">Log Out</a>
         <form action="search.php" method="get" class="searchform">
             <label for="" class="screen-reader-text">Search</label>
             <input type="search" name="phrase" id="phrase">
@@ -72,9 +71,15 @@
                     extract($row);
             ?>
             <div class="follow-user">
-            <?php show_profile_pic($profile_pic, 'round', $username, 25); ?>
-                    <h4 class="author-name"><?php echo $username; ?></h4>
-                <p><?php echo $bio; ?></p>
+                <a href="profile.php?user_id=<?php echo $user_id; ?>">
+                    <span>
+                        <span class="flex gap">
+                        <?php show_profile_pic($profile_pic, 'round', $username, 25); ?>
+                        <h4 class="author-name"><?php echo $username; ?></h4>
+                    </span>
+                        <p><?php echo $bio; ?></p>
+                    </span>
+                </a>
                 <button>FOLLOW</button>
             </div>
             <?php 

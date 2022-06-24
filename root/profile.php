@@ -26,7 +26,7 @@ if (isset($_GET['user_id'])) {
 		$row = $result->fetch();
 		extract($row);
 	?>
-		<section class="user author-profile">
+		<section class="user author-profile card">
 			<?php show_profile_pic($profile_pic, 100); ?>
 			<h2><?php echo $username ?></h2>
 			<p><?php echo $bio; ?></p>
@@ -70,7 +70,7 @@ if (isset($_GET['user_id'])) {
 			</div><!-- .grid -->
 		<?php } else { ?>
 
-			<div class="feedback info">
+			<div class="feedback info card">
 				<p>This user hasn't posted any public images</p>
 			</div>
 

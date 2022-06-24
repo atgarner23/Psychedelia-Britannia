@@ -5,6 +5,8 @@
             <button type="submit">Search</button>
         </form>
 
+        
+
         <?php 
         $result = $DB->prepare('SELECT user_id, profile_pic, username, bio
                                 FROM users
@@ -21,8 +23,11 @@
                     <h4 class="author-name"><?php echo $username; ?></h4>
             </div>
             <p class="bio"><?php echo $bio; ?></p>
-            <button>EDIT</button>
-            <button class="messages">Messages</button>
+            <div class="flex justify-sp-bt">
+                <button>EDIT</button>
+                <button class="messages">Messages</button>
+            </div>
+            
             <?php
                }
             }
@@ -37,6 +42,7 @@
             <li><a href="POSTS">POSTS</a></li>
         </ul>
 
+        <a href="login.php?action=logout" class="button">Log Out</a>
 
         <div class="footer">
             <?php require('includes/footer.php'); ?>
