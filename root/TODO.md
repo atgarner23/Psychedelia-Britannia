@@ -11,6 +11,10 @@
 * add likes
 * private posts
 * edit posts
+* create plants page
+* create bookmarks page
+* create topics page
+* journal page
 * 
 
 # DONE
@@ -29,3 +33,4 @@
 * create profile page
 * create markup for individual profile page
 * create new post functionality
+* create customer service contact form
