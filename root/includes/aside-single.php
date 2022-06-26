@@ -74,7 +74,7 @@
                     extract($row);
             ?>
             <ul class="topics">
-                <li class="topic"><a href="TOPIC"><?php echo $name ?></a></li>
+                <li class="topic"><a href="TOPIC"><?php echo $t_name ?></a></li>
             </ul>
             <?php 
                 }//end while

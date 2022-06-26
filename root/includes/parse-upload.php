@@ -115,7 +115,7 @@ if (isset($_POST['did_upload'])) {
             //check to see if it worked
             if ($result->rowCount()) {
                 //success. redirect to the post page
-                header("Location:single.php?post_id=$post_id");
+                header("Location:account.php");
                 // $feedback = 'Success';
                 // $feedback_class = 'success';
             } else {

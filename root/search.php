@@ -20,12 +20,17 @@ require('includes/header.php');
 <main class="content">
     <?php //get all the posts that match the phrase
     if ($phrase != '') {
-        $query = 'SELECT posts.title, posts.post_id, posts.image, posts.date, posts.user_id, users.user_id, users.profile_pic, users.username
-                    FROM posts, users
+        $query = 'SELECT posts.*, users.user_id, users.profile_pic, users.username, plants.*, topics.*
+                    FROM posts, users, plants, topics
                     WHERE (title LIKE :phrase
-                    OR body LIKE :phrase)
+                    OR body LIKE :phrase
+                    OR topics.t_name LIKE :phrase
+                    OR plants.p_name LIKE :phrase)
                     AND posts.user_id = users.user_id
+                    AND posts.topic_id = topics.topic_id
+                    AND posts.plant_id = plants.plant_id
                     AND is_published = 1
+                    AND is_public = 1
                     ORDER BY date DESC';
 
         $result = $DB->prepare($query);
@@ -73,20 +78,25 @@ require('includes/header.php');
             <section class="grid">
                 <?php while ($row = $result->fetch()) {
                     extract($row); ?>
-                    <div class="card flex justify-sp-bt">
-            <div class="card-content">
-                <div class="author-info">
-                    <!-- <img src="images/default-profile-pic.jpg" height="25px" width="25px" style="border-radius: 50%;" alt="USERNAME" class="author-image-card"> -->
-
-                    <?php show_profile_pic($profile_pic, 'round', $username, 25); ?>
-                    <h4 class="author-name"><?php echo $username; ?></h4>
-                    <h5 class="post-date"><?php echo convert_date($date); ?></h5>
-                </div><!-- end author-info div-->
-                <h2 class="post-title"><?php echo $title; ?></h2>
-            </div><!-- end card-content div-->
-            <img src="<?php echo $image; ?>" alt="POST_IMAGE_ALT" class="post-image-card">
-            <!-- C/O https://placeholder.com/ -->
-        </div><!-- end card div-->
+                    <div class="card">
+                        <div class="card-content flex justify-sp-bt">
+                            <div class="card-info">
+                                <div class="author-info">
+                                    <?php show_profile_pic($profile_pic, 'round', $username, 25); ?>
+                                    <h4 class="author-name"><?php echo $username; ?></h4>
+                                    <h5 class="post-date"><?php echo convert_date($date); ?></h5>
+                                </div><!-- end author-info div-->
+                                <h2 class="post-title"><?php echo $title; ?></h2>
+                                <p class="post-descrip"><?php echo $body; ?> </p>
+                                <p>Topic: <?php echo $t_name; ?></p>
+                                <p>Plant: <?php echo $p_name; ?></p>
+                            </div>
+                            <?php show_post_image($image, 'small', $title); ?>
+                        </div><!-- end card-content div-->
+                        
+                        <a href="single.php?post_id=<?php echo $post_id; ?>">Read More &rarr;</a>
+                        <!-- C/O https://placeholder.com/ -->
+                    </div><!-- end card div-->
                 <?php } //end while loop
                 ?>
             </section> <!-- .grid -->
@@ -126,6 +136,7 @@ require('includes/header.php');
         $class = 'error';
         show_feedback($message, $class);
     }
+    
     ?>
 </main>
 <?php

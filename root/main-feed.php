@@ -24,10 +24,13 @@ if (!$logged_in_user) {
 
 
         <?php //get up to 20 published posts, newest first
-	$result = $DB->prepare('SELECT posts.*, users.username, users.profile_pic, users.user_id
-							FROM posts, users
+	$result = $DB->prepare('SELECT posts.*, users.username, users.profile_pic, users.user_id, plants.*, topics.*
+							FROM posts, users, topics, plants
 							WHERE posts.user_id = users.user_id
+                            AND posts.plant_id = plants.plant_id
+                            AND posts.topic_id = topics.topic_id
 							AND posts.is_published = 1
+                            AND posts.is_public = 1
 							ORDER BY posts.date DESC
 							LIMIT 20');
 	$result->execute();

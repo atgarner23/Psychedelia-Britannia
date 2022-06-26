@@ -50,7 +50,7 @@ require('includes/header.php');
 		$result = $DB->prepare('SELECT posts.*, topics.*, plants.*
 							FROM posts, topics, plants
 							WHERE posts.is_published = 1
-							AND posts.is_public = 1
+							AND posts.is_public = 0
                             AND posts.topic_id = topics.topic_id
 							AND posts.plant_id = plants.plant_id
 							AND posts.user_id = ?
