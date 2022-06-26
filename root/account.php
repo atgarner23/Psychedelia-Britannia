@@ -18,7 +18,30 @@ require('includes/header.php');
             <li><a href="POSTS">Posts</a></li><!--Public Posts-->
             <li><a href="JOURNAL">Journal</a></li><!--Private Posts-->
         </ul>
-        <a href="new-post.php" class="button new-post">New Post</a>
+        <!-- <a href="new-post.php" class="button new-post">New Post</a> -->
+
+		<!-- Multi action button -->
+		<div class="mab flex">
+			<button type="button" class="mab__button mab__button--menu">
+				<span class="material-icons mab__icon">add_box</span>
+				<span class="mab__text">New Post</span>
+			</button>
+			<!-- <button type="button" class="mab__button mab__button--menu">
+				<span class="material-icons mab__icon">expand_more</span>
+			</button> -->
+
+			<div class="mab__list">
+				<a href="new-journal.php" class="mab__button mab__button--secondary">
+					<span class="mab__text">Journal Post</span>
+				</a>
+				<a href="new-post.php" class="mab__button mab__button--secondary">
+					<span class="mab__text">Public Post</span>
+				</a>
+			</div>
+    	</div>
+
+		<!-- End Multi Action Button -->
+
         <button class="more">more</button>
     </div>
 		<?php
@@ -66,7 +89,7 @@ require('includes/header.php');
 	<?php
 		} //end if posts found 
 	?>
-
+<script src="js/multi-button.js" defer></script>
 </main>
 <?php
 require('includes/aside-account.php'); ?>

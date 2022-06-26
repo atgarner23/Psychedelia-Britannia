@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- //taken from "How to Create Multi-action Buttons with HTML, CSS & JavaScript" from dcode on YouTube -->
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- //material icons from google fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </link>
+    <style>
+        .mab {
+            position: relative;
+            background: #dddddd;
+            display: inline-flex;
+        }
+
+        .mab__button {
+            background: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 12px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .mab__button:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .mab__button:not(.mab__button--menu) .mab__icon {
+            margin-right: 8px;
+        }
+
+        .mab__text {
+            font-family: sans-serif;
+        }
+
+        .mab__list {
+            position: absolute;
+            display: none;
+            top: 115%;
+            right: 0;
+            padding: 5px 0;
+            background: #fff;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .mab__list--visible {
+            display: initial;
+        }
+
+        .mab__button--secondary {
+            width: 100%;
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <!-- //required html -->
+
+    <div class="mab">
+        <button type="button" class="mab__button mab__button--primary" onclick="console.log('primary')">
+            <span class="material-icons mab__icon">save</span>
+            <span class="mab__text">Save Changes</span>
+        </button>
+        <button type="button" class="mab__button mab__button--menu">
+            <span class="material-icons mab__icon">expand_more</span>
+        </button>
+
+        <div class="mab__list">
+            <button type="button" class="mab__button mab__button--secondary" onclick="console.log('save draft')">
+                <span class="mab__text">Save Draft</span>
+            </button>
+            <a class="mab__button mab__button--secondary" onclick="console.log('make a copy')">
+                <span class="mab__text">Make a Copy</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        //multi action button
+        {
+            //enable all menu buttons
+            document.querySelectorAll('.mab').forEach(multiAction => {
+                const menuButton = multiAction.querySelector('.mab__button--menu');
+                const list = multiAction.querySelector('.mab__list');
+
+                menuButton.addEventListener('click', () => {
+                    list.classList.toggle('mab__list--visible');
+                });//closes toggle mab list visible
+            });//closes querySelectorAll(''.mab')
+            //hide all lists when clicking elsewhere on the screen
+            document.addEventListener('click', e => {
+                const keepOpen = (
+                    e.target.matches('.mab__list')
+                    || e.target.matches('.mab__button--menu')
+                    || e.target.closest('.mab__button--menu')
+                );
+
+                if (keepOpen) return;
+
+                document.querySelectorAll('.mab__list').forEach(list => {
+                    list.classList.remove('mab__list--visible');
+                });//closes remove mab list visible
+            }); //closes document event listener click
+        }
+    </script>
+</body>
+
+
+</html>

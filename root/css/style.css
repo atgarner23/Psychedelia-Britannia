@@ -169,5 +169,37 @@ aside {
     background-position: 0% 0%;
   }
 }
+.mab {
+  position: relative;
+}
+
+.mab__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mab__list {
+  position: absolute;
+  display: none;
+  top: 115%;
+  right: 0;
+  background: #e6ccb2;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.mab__list--visible {
+  display: initial;
+}
+
+.mab__button--secondary {
+  width: 100%;
+  padding: 0.5em;
+  cursor: pointer;
+}
+.mab__button--secondary:hover {
+  background: #ddb892;
+  color: #fff7e7;
+}
 
 /*# sourceMappingURL=style.css.map */

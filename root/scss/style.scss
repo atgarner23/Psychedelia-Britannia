@@ -148,3 +148,60 @@ aside {
     // }
 
 }
+
+
+
+//Multi Action Button styles
+.mab {
+    position: relative;
+    // background-color: $light-blue;
+    // display: inline-flex;
+}
+
+.mab__button {
+    //     background: none;
+    //     border: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    //     padding: 8px 12px;
+    //     cursor: pointer;
+}
+
+// .mab__button:hover {
+//     background: rgba(0, 0, 0, 0.5);
+// }
+
+// .mab__button:not(.mab__button--menu) .mab__icon {
+//     margin-right: 8px;
+// }
+
+// .mab__text {
+//     font-family: sans-serif;
+// }
+
+.mab__list {
+    position: absolute;
+    display: none;
+    top: 115%;
+    right: 0;
+    //padding: $gutter $gutter*.5;
+    background: $beige;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.mab__list--visible {
+    display: initial;
+}
+
+.mab__button--secondary {
+    width: 100%;
+    padding: $gutter*.5;
+    cursor: pointer;
+
+    // justify-content: flex-start;
+    &:hover {
+        background: $dark-beige;
+        color: $off-white;
+    }
+}
