@@ -26,10 +26,6 @@ body {
   overflow: hidden;
 }
 
-.flex {
-  display: flex;
-}
-
 .button,
 button {
   display: block;
@@ -76,8 +72,24 @@ button:focus::after {
   background-size: 200% 200%;
 }
 
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-c {
+  justify-content: center;
+}
+
 .justify-sp-bt {
   justify-content: space-between;
+}
+
+.align-c {
+  align-items: center;
 }
 
 .gap {
@@ -150,6 +162,10 @@ aside {
 #landing-page .legal {
   margin: 0 auto;
   width: fit-content;
+}
+
+section.user h2 {
+  font-size: 1.5rem;
 }
 
 @keyframes animatedgradient {

@@ -66,18 +66,18 @@ require('includes/header.php');
 				while ($row = $result->fetch()) {
 					extract($row);
 				?>
-					<div class="card">
-            <div class="card-content flex justify-sp-bt">
-               <div class="card-body">
-                <h2 class="post-title"><?php echo $title; ?></h2>
-                <p class="post-descrip"><?php echo $body; ?> </p>
-				</div> 
-				<?php show_post_image($image, 'small', $title); ?>
-            </div><!-- end card-content div-->
+			<div class="card">
+            	<div class="card-content flex justify-sp-bt">
+					<div class="card-body">
+						<h2 class="post-title"><?php echo $title; ?></h2>
+						<p class="post-descrip"><?php echo $body; ?> </p>
+					</div> <!-- end card body -->
+					<?php show_post_image($image, 'small', $title); ?>
+            	</div><!-- end card-content div-->
             
-            <a href="single.php?post_id=<?php echo $post_id; ?>">Read More &rarr;</a>
-            <!-- C/O https://placeholder.com/ -->
-        </div><!-- end card div-->
+           		 <a href="single.php?post_id=<?php echo $post_id; ?>">Read More &rarr;</a>
+            
+        	</div><!-- end card div-->
 
 				<?php } //end while loop
 				?>

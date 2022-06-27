@@ -22,17 +22,29 @@ body {
     overflow: hidden;
 }
 
-.flex {
-    display: flex;
-}
-
 .button,
 button {
     @include button($light-blue, $brown, $gutter, $gradient-bl, $border-size, $border-radius);
 }
 
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.justify-c {
+    justify-content: center;
+}
+
 .justify-sp-bt {
     justify-content: space-between;
+}
+
+.align-c {
+    align-items: center;
 }
 
 .gap {
@@ -119,6 +131,9 @@ aside {
 
 //end landing-page styles
 
+section.user h2 {
+    font-size: 1.5rem;
+}
 
 //keyframes
 //for gradient border from Mike Schultz https://codepen.io/mike-schultz/pen/NgQvGO

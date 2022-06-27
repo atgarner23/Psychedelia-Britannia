@@ -9,14 +9,15 @@
 * implement icons for nav
 * Add shareable links 
 * add likes
-* private posts
+
 * edit posts
 * edit profile
 * create plants page
 * create bookmarks page
 * create topics page
-* journal page - list of journal posts
+
 * resume drafts posts
+* add a way to upload a profile pic
 
 # DONE
 * create mark up for main feed
@@ -36,3 +37,5 @@
 * create new post functionality
 * create customer service contact form
 * create account managment page
+* journal page - list of journal posts
+* private posts

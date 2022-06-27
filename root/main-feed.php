@@ -40,21 +40,25 @@ if (!$logged_in_user) {
 			//make variables from the array keys
 			extract($row);
 	?>
-		<div class="card flex justify-sp-bt">
-            <div class="card-content">
-                <div class="author-info">
-                    <?php show_profile_pic($profile_pic, 'round', $username, 25); ?>
-                    <h4 class="author-name"><?php echo $username; ?></h4>
-                    <h5 class="post-date"><?php echo convert_date($date); ?></h5>
-                </div><!-- end author-info div-->
-                <h2 class="post-title"><?php echo $title; ?></h2>
-                <p class="post-descrip"><?php echo $body; ?> </p>
-            </div><!-- end card-content div-->
-            <?php show_post_image($image, 'small', $title); ?>
-            <a href="single.php?post_id=<?php echo $post_id; ?>">Read More &rarr;</a>
-            <!-- C/O https://placeholder.com/ -->
-        </div><!-- end card div-->
-        
+        <div class="card">
+            	<div class="card-content flex justify-sp-bt">
+					<div class="card-body">
+                        <div class="author-info">
+                            <span class="flex align-c gap">
+                            <?php show_profile_pic($profile_pic, 'round', $username, 25); ?>
+                            <h4 class="author-name"><?php echo $username; ?></h4>
+                            </span>
+                            <h5 class="post-date"><?php echo convert_date($date); ?></h5>
+                        </div><!-- end author-info div-->
+						<h2 class="post-title"><?php echo $title; ?></h2>
+						<p class="post-descrip"><?php echo $body; ?> </p>
+					</div> <!-- end card body -->
+					<?php show_post_image($image, 'small', $title); ?>
+            	</div><!-- end card-content div-->
+            
+           		 <a href="single.php?post_id=<?php echo $post_id; ?>">Read More &rarr;</a>
+            
+        	</div><!-- end card div-->
 
 
         <?php

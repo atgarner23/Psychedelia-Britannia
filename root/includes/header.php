@@ -1,4 +1,10 @@
-
+<?php 
+//includes
+// require('includes/CONFIG.php');
+require_once('includes/functions.php');
+$logged_in_user = check_login();
+$user_id = $logged_in_user['user_id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,13 +25,13 @@
             <ul class="main-nav">
                 <li><a href="main-feed.php">Home</a></li>
                 <li><a href="PLANTS PAGE">Plants</a></li>
-                <li><a href="NOTIFICATIONS PAGE">Notifications</a></li>
-                <li><a href="BOOKMARKS PAGE">Bookmarks</a></li>
                 <li><a href="TOPICS PAGE">Topics</a></li>
-                <li><a href="JOURNAL PAGE">Journal</a></li>
-                <li><a href="MY POSTS PAGE">Posts</a></li>
+                <li><a href="account-journal.php">Journal</a></li>
+                <li><a href="account.php">Posts</a></li>
+                <li><a href="BOOKMARKS PAGE">Bookmarks</a></li>
                 <li><a href="LISTS PAGE">Lists</a></li>
-                <li><a href="account.php">Profile</a></li>
+                <li><a href="NOTIFICATIONS PAGE">Notifications</a></li>
+                <li><a href="profile.php?user_id=<?php echo $user_id; ?>">Profile</a></li>
             </ul>
         </nav>
     </header>

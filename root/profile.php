@@ -26,8 +26,8 @@ if (isset($_GET['user_id'])) {
 		$row = $result->fetch();
 		extract($row);
 	?>
-		<section class="user author-profile card">
-			<?php show_profile_pic($profile_pic, 100); ?>
+		<section class="user author-profile card flex flex-col justify-c align-c">
+			<?php show_profile_pic($profile_pic, 'round', $username, 100); ?>
 			<h2><?php echo $username ?></h2>
 			<p><?php echo $bio; ?></p>
 			
@@ -36,9 +36,11 @@ if (isset($_GET['user_id'])) {
 		<?php
 
 		//get this user's posts 	
-		$result = $DB->prepare('SELECT posts.*, topics.name
-							FROM posts, topics
+		$result = $DB->prepare('SELECT posts.*, topics.t_name, plants.p_name
+							FROM posts, topics, plants
 							WHERE posts.is_published = 1
+							AND posts.is_public = 1
+							AND posts.plant_id = plants.plant_id
                             AND posts.topic_id = topics.topic_id
 							AND posts.user_id = ?
 							ORDER BY posts.date DESC
@@ -53,17 +55,20 @@ if (isset($_GET['user_id'])) {
 				while ($row = $result->fetch()) {
 					extract($row);
 				?>
+					<a href="single.php?post_id=<?php echo $post_id; ?>">
 					<div class="one-post card">
-						<a href="single.php?post_id=<?php echo $post_id; ?>">
+						
 							<?php show_post_image($image, 'small') ?>
 
-						</a>
+						
 						<h2><?php echo $row['title']; ?></h2>
 
-						<span class="topic"><?php echo $name; ?></span>
+						<span class="topic"><?php echo $t_name; ?></span>
+						<span class="plant"><?php echo $p_name; ?></span>
 						<span class="date"><?php echo time_ago($date); ?></span>
 						<span class="comment-count"><?php echo count_comments($post_id); ?> Comments</span>
 					</div>
+				</a>
 
 				<?php } //end while loop
 				?>
@@ -71,7 +76,7 @@ if (isset($_GET['user_id'])) {
 		<?php } else { ?>
 
 			<div class="feedback info card">
-				<p>This user hasn't posted any public images</p>
+				<p>This user doesn't have any public posts yet.</p>
 			</div>
 
 	<?php

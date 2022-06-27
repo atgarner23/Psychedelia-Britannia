@@ -113,7 +113,7 @@ section {
 }
 
 body {
-    line-height: 1;
+    line-height: 1.2;
 }
 
 ol,
@@ -137,4 +137,12 @@ q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+a,
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
 }
