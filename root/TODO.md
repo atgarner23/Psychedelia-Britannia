@@ -1,24 +1,20 @@
 # TODO
-* creat author card function similar to show profile pic
-* post card function
-
 * css layout
 * css styling
-* chunk down mark up into includes
-
-* Add shareable links 
-* add likes
-
-* edit posts
-* edit profile
 * create plants page
 * create bookmarks page
 * create topics page
-
-* resume drafts posts
+* add likes
+* add follows
+* deploy files to live site and config host gator server
 * add a way to upload a profile pic
-* add comments on single post
-* fix single post. its all fucked up
+* edit posts
+* edit profile
+* Add shareable links 
+* resume drafts posts
+* chunk down mark up into includes
+* creat author card function similar to show profile pic
+* post card function
 
 # DONE
 * create mark up for main feed
@@ -42,3 +38,5 @@
 * private posts
 * create icons for nav
 * implement icons for nav
+* fix single post. its all fucked up
+* add comments on single post
