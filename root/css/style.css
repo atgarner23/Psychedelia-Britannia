@@ -96,6 +96,10 @@ button:focus::after {
   gap: 1em;
 }
 
+.gap-half {
+  gap: 0.5em;
+}
+
 .grid {
   display: grid;
 }
@@ -128,6 +132,14 @@ aside {
   padding: 1em;
   top: 0;
   left: 0;
+}
+
+img {
+  display: block;
+}
+
+img.icon {
+  width: 1rem;
 }
 
 .post-descrip {
@@ -231,6 +243,17 @@ nav {
   height: 100%;
 }
 
+nav a[href*="main-feed.php"] {
+  display: block;
+  text-indent: -9999px;
+  width: 2.5rem;
+  height: 3.75rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-image: url(../images/logo-small-brown.svg);
+}
+
 .main-nav li {
   padding: 0.5em;
 }
@@ -238,8 +261,8 @@ nav {
 .main-nav a {
   display: block;
   text-indent: -9999px;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top center;

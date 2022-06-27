@@ -47,19 +47,21 @@ if (!$logged_in_user) {
 			extract($row);
 	?>
 		<div class="card">
-            <div class="post-head flex jc-sb">
-                <div class="author flex">
-                    <?php show_profile_pic($profile_pic, 'round', $username, 25); ?>
-                    <h4 class="author-name"><?php echo $username; ?></h4>
+            <div class="post-head flex justify-sp-bt">
+                <div class="author">
+                    <div class="profile_section flex align-c">
+                        <?php show_profile_pic($profile_pic, 'round', $username, 25); ?>
+                        <h4 class="author-name"><?php echo $username; ?></h4>
+                    </div>
                     <h5 class="post-date"><?php echo convert_date($date); ?></h5>
                 </div><!-- end author div-->
                 <div class="share">
-                    <ul>
-                        <li><a href="BOOKMARK">BOOKMARK</a></li>
-                        <li><a href="LIKE">LIKE</a></li>
-                        <li><a href="SHARE">SHARE</a></li>
-                        <li><a href="TWITTER">TWITTER</a></li>
-                        <li><a href="FACEBOOK">FACEBOOK</a></li>
+                    <ul class="flex gap-half align-c">
+                        <li><a href="BOOKMARK"><img src="images/bookmark-flat-icon.svg" alt="Bookmarks" class="icon"></a></li>
+                        <li><a href="LIKE"><img src="images/like-icon.svg" alt="Likes" class="icon"></a></li>
+                        <li><a href="SHARE"><img src="images/share-icon.svg" alt="Share" class="icon"></a></li>
+                        <li><a href="TWITTER"><img src="images/twitter-icon.svg" alt="Twitter" class="icon"></a></li>
+                        <li><a href="FACEBOOK"><img src="images/facebook-icon.svg" alt="Facebook" class="icon"></a></li>
                     </ul>
                 </div><!-- end share div-->
             </div><!-- end post-head div-->
@@ -67,10 +69,13 @@ if (!$logged_in_user) {
                 <h2><?php echo $title; ?></h2>
                 <h4><?php echo $subtitle; ?></h4>
             </div><!-- end post-title div--> 
-            <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>">
+            <?php show_post_image($image, 'medium', $title); ?>
             <p class="post-body"><?php echo $body; ?></p>
 
+
+            <div class="comment-section">
             <?php 
+            
             //only show the comment form if this post has comments enabled
             if ($allow_comments) {
                 if ($logged_in_user) {
@@ -81,19 +86,22 @@ if (!$logged_in_user) {
             } else {
                 echo '<div class ="message">Comments Closed.</div>';
             } //close if allow_comments
-            include('includes/comments.php');
+
             ?>
-            <!-- TODO: Add comments form
+            <!-- TODO:
                        Add comments section
                         Add shareable and likes -->
-
+            </div>
 
 
         </div><!-- end card div-->
         
-
+            
 
         <?php
+
+        include('includes/comments.php');
+
 		} //end while	
 	} else {
 		//no rows found from our query
@@ -106,7 +114,6 @@ if (!$logged_in_user) {
 
     </main>
     <?php require('includes/aside-single.php'); ?>
-    <?php require('includes/debug-output.php'); ?>
 </div>
 </body>
 

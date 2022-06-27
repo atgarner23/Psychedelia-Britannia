@@ -1,4 +1,4 @@
-<section class="comments">
+<section class="comments card">
     <h2><?php
         $total = count_comments($post_id);
         echo $total == 1 ? 'One Comment' : $total . ' Comments'; ?> on this post</h2>
@@ -18,9 +18,9 @@
             while ($row = $result->fetch()) {
                 extract($row);
     ?>
-                <div class="one-comment">
+                <div class="one-comment card">
                     <div class="author flex">
-                        <?php show_profile_pic($profile_pic); ?>
+                        <?php show_profile_pic($profile_pic, 'round', $username, 25); ?>
                         <h4><?php echo $username; ?></h4>
                     </div>
 
