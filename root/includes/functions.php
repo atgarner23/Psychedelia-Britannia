@@ -237,7 +237,7 @@ function check_login()
  * @param $alt string image alt text
  * @param $size int the width and height measurement
  */
-function show_profile_pic($src, $class = 'round', $alt = 'Profile Picture', $size = '50')
+function show_profile_pic($src, $class, $alt = 'Profile Picture', $size = '50')
 {
     //check if src is blank
     if ($src == '') {
@@ -256,7 +256,7 @@ function show_profile_pic($src, $class = 'round', $alt = 'Profile Picture', $siz
 function topic_dropdown($default = 0)
 {
     global $DB;
-    $result = $DB->prepare('SELECT * FROM topics ORDER BY name ASC');
+    $result = $DB->prepare('SELECT * FROM topics ORDER BY t_name ASC');
     $result->execute();
     if ($result->rowCount()) {
         echo '<select name="topic_id">';
@@ -268,7 +268,7 @@ function topic_dropdown($default = 0)
             } else {
                 $atts = '';
             }
-            echo "<option value='$topic_id' $atts>$name</option>";
+            echo "<option value='$topic_id' $atts>$t_name</option>";
         }
         echo '</select>';
     }
@@ -283,7 +283,7 @@ function topic_dropdown($default = 0)
 function plant_dropdown($default = 0)
 {
     global $DB;
-    $result = $DB->prepare('SELECT * FROM plants ORDER BY name ASC');
+    $result = $DB->prepare('SELECT * FROM plants ORDER BY p_name ASC');
     $result->execute();
     if ($result->rowCount()) {
         echo '<select name="plant_id">';
@@ -295,7 +295,7 @@ function plant_dropdown($default = 0)
             } else {
                 $atts = '';
             }
-            echo "<option value='$plant_id' $atts>$name</option>";
+            echo "<option value='$plant_id' $atts>$p_name</option>";
         }
         echo '</select>';
     }

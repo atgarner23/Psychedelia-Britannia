@@ -96,6 +96,14 @@ button:focus::after {
   gap: 1em;
 }
 
+.grid {
+  display: grid;
+}
+
+.col-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .round {
   border-radius: 50%;
 }
@@ -216,6 +224,43 @@ section.user h2 {
 .mab__button--secondary:hover {
   background: #ddb892;
   color: #fff7e7;
+}
+
+nav {
+  width: 100%;
+  height: 100%;
+}
+
+.main-nav li {
+  padding: 0.5em;
+}
+
+.main-nav a {
+  display: block;
+  text-indent: -9999px;
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.main-nav a[href="PLANTS PAGE"] {
+  background-image: url(../images/plant-icon.svg);
+}
+.main-nav a[href="TOPICS PAGE"] {
+  background-image: url(../images/topic-icon.svg);
+}
+.main-nav a[href="account-journal.php"] {
+  background-image: url(../images/journal-icon.svg);
+}
+.main-nav a[href="account.php"] {
+  background-image: url(../images/post-icon.svg);
+}
+.main-nav a[href="BOOKMARKS PAGE"] {
+  background-image: url(../images/bookmark-icon.svg);
+}
+.main-nav a[href="NOTIFICATIONS PAGE"] {
+  background-image: url(../images/notification-icon.svg);
 }
 
 /*# sourceMappingURL=style.css.map */

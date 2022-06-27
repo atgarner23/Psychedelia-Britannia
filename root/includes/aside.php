@@ -36,6 +36,7 @@
         <!--End trending-articles div-->
         <div class="topics">
             <h2>Hot Topics</h2>
+            <ul class="topics grid col-2">
             <?php 
             //get 6 random topics and display them here
             $result = $DB->prepare('SELECT * FROM topics ORDER BY RAND() LIMIT 6');
@@ -45,9 +46,9 @@
                     //make variables from the array keys
                     extract($row);
             ?>
-            <ul class="topics">
+            
                 <li class="topic"><a href="TOPIC"><?php echo $t_name ?></a></li>
-            </ul>
+            
             <?php 
                 }//end while
             }else{
@@ -55,7 +56,7 @@
                 echo 'No Topics Found';
             }//end else
             ?>
-            
+            </ul>
         </div>
         <!--End Topics Div-->
         <div class="suggested-follow">

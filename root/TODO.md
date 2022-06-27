@@ -5,8 +5,7 @@
 * css layout
 * css styling
 * chunk down mark up into includes
-* create icons for nav
-* implement icons for nav
+
 * Add shareable links 
 * add likes
 
@@ -18,6 +17,8 @@
 
 * resume drafts posts
 * add a way to upload a profile pic
+* add comments on single post
+* fix single post. its all fucked up
 
 # DONE
 * create mark up for main feed
@@ -39,3 +40,5 @@
 * create account managment page
 * journal page - list of journal posts
 * private posts
+* create icons for nav
+* implement icons for nav

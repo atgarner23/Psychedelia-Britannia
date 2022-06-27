@@ -70,7 +70,7 @@ if (!$logged_in_user) {
 	?>
 
 
-
+	
 
     </main>
     <?php require('includes/aside.php'); ?>

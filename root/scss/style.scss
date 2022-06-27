@@ -51,6 +51,14 @@ button {
     gap: $gutter;
 }
 
+.grid {
+    display: grid;
+}
+
+.col-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .round {
     border-radius: 50%;
 }
@@ -219,4 +227,50 @@ section.user h2 {
         background: $dark-beige;
         color: $off-white;
     }
+}
+
+
+// main nav styles
+nav {
+    width: 100%;
+    height: 100%;
+}
+
+.main-nav li {
+    padding: $gutter*.5;
+}
+
+.main-nav a {
+    display: block;
+    text-indent: -9999px;
+    width: 2rem;
+    height: 2rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top center;
+
+    &[href="PLANTS PAGE"] {
+        background-image: url(../images/plant-icon.svg);
+    }
+
+    &[href="TOPICS PAGE"] {
+        background-image: url(../images/topic-icon.svg);
+    }
+
+    &[href="account-journal.php"] {
+        background-image: url(../images/journal-icon.svg);
+    }
+
+    &[href="account.php"] {
+        background-image: url(../images/post-icon.svg);
+    }
+
+    &[href="BOOKMARKS PAGE"] {
+        background-image: url(../images/bookmark-icon.svg);
+    }
+
+    &[href="NOTIFICATIONS PAGE"] {
+        background-image: url(../images/notification-icon.svg);
+    }
+
 }

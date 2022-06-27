@@ -4,6 +4,7 @@
 require_once('includes/functions.php');
 $logged_in_user = check_login();
 $user_id = $logged_in_user['user_id'];
+$profile_pic = $logged_in_user['profile_pic'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,17 +22,19 @@ $user_id = $logged_in_user['user_id'];
 <body>
 <div class="container">
     <header class="main-header">
-        <nav>
+        <nav class="flex flex-col justify-sp-bt align-c">
+            <a href="main-feed.php"><h1>Home</h1></a>
             <ul class="main-nav">
-                <li><a href="main-feed.php">Home</a></li>
+                
                 <li><a href="PLANTS PAGE">Plants</a></li>
                 <li><a href="TOPICS PAGE">Topics</a></li>
                 <li><a href="account-journal.php">Journal</a></li>
                 <li><a href="account.php">Posts</a></li>
                 <li><a href="BOOKMARKS PAGE">Bookmarks</a></li>
-                <li><a href="LISTS PAGE">Lists</a></li>
+                <!-- <li><a href="LISTS PAGE">Lists</a></li> -->
                 <li><a href="NOTIFICATIONS PAGE">Notifications</a></li>
-                <li><a href="profile.php?user_id=<?php echo $user_id; ?>">Profile</a></li>
+                
             </ul>
+            <a href="profile.php?user_id=<?php echo $user_id; ?>"><?php show_profile_pic($profile_pic, 'round', 'Profile', 25) ?></a>
         </nav>
     </header>
