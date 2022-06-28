@@ -1,7 +1,7 @@
 <aside>
         <form action="search.php" method="get" class="searchform">
             <input type="search" name="phrase" id="phrase" class="search-input" placeholder="Search..">
-            <button type="submit" class="search-btn material-symbols-outlined">search</button>
+            <button type="submit" class="search-btn btn material-symbols-outlined">search</button>
         </form>
         <div class="trending-articles">
             <h2>Trending Articles</h2>

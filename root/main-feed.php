@@ -13,7 +13,7 @@ if (!$logged_in_user) {
 ?>
     <main class="main-content">
         <div class="local-nav">
-            <ul class="flex">
+            <ul class="flex gap-half justify-c">
                 <li><a href="FOLLOWING">Following</a></li>
                 <li><a href="TRENDING">Trending</a></li>
                 <li><a href="TOPICS">Topics</a></li>

@@ -16,6 +16,8 @@
 * creat author card function similar to show profile pic
 * post card function
 
+* ask about comments being posted multiple times.
+
 # DONE
 * create mark up for main feed
 * post card html

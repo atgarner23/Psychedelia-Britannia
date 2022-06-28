@@ -20,14 +20,7 @@ if (!$logged_in_user) {
 }
 ?>
     <main class="main-content">
-        <div class="local-nav">
-            <ul class="flex">
-                <li><a href="FOLLOWING">Following</a></li>
-                <li><a href="TRENDING">Trending</a></li>
-                <li><a href="TOPICS">Topics</a></li>
-                <li><a href="PLANTS">Plants</a></li>
-            </ul>
-        </div>
+        
 
 
 
@@ -49,7 +42,7 @@ if (!$logged_in_user) {
 		<div class="card">
             <div class="post-head flex justify-sp-bt">
                 <div class="author">
-                    <div class="profile_section flex align-c">
+                    <div class="profile_section flex align-c gap">
                         <?php show_profile_pic($profile_pic, 'round', $username, 25); ?>
                         <h4 class="author-name"><?php echo $username; ?></h4>
                     </div>
@@ -65,9 +58,9 @@ if (!$logged_in_user) {
                     </ul>
                 </div><!-- end share div-->
             </div><!-- end post-head div-->
-            <div class="post-title">
-                <h2><?php echo $title; ?></h2>
-                <h4><?php echo $subtitle; ?></h4>
+            <div >
+                <h2 class="post-title"><?php echo $title; ?></h2>
+                <h4 class="post-sub"><?php echo $subtitle; ?></h4>
             </div><!-- end post-title div--> 
             <?php show_post_image($image, 'medium', $title); ?>
             <p class="post-body"><?php echo $body; ?></p>

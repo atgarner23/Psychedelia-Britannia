@@ -4,10 +4,11 @@
     margin: $gutter auto;
     padding: $gutter;
     background-color: $off-white;
-    border-width: 1px;
+    border-width: 2px;
     border-style: solid;
-    border-image: $dark-beige;
+    border-color: $brown;
     border-radius: 23px;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 // Codepen by Mike Schultz https://codepen.io/mike-schultz/pen/NgQvGO

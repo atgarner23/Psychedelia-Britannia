@@ -13,8 +13,8 @@ require('includes/header.php');
 ?>
 <main class="account-content">
 	
-    <div class="top-nav flex">
-        <ul class="local-nav flex">
+<div class="local-nav flex align-c">
+        <ul class="gap-half justify-c flex">
             <li><a href="account.php">Posts</a></li><!--Public Posts-->
             <li><a href="account-journal.php">Journal</a></li><!--Private Posts-->
         </ul>
@@ -22,13 +22,8 @@ require('includes/header.php');
 
 		<!-- Multi action button -->
 		<div class="mab flex">
-			<button type="button" class="mab__button mab__button--menu">
-				<span class="material-icons mab__icon">add_box</span>
-				<span class="mab__text">New Post</span>
-			</button>
-			<!-- <button type="button" class="mab__button mab__button--menu">
-				<span class="material-icons mab__icon">expand_more</span>
-			</button> -->
+			<button type="button" class="mab__button mab__button--menu btn material-symbols-outlined">add_box</button>
+			
 
 			<div class="mab__list">
 				<a href="new-post.php" class="mab__button mab__button--secondary">
@@ -41,8 +36,9 @@ require('includes/header.php');
     	</div>
 
 		<!-- End Multi Action Button -->
-
-        <button class="more">more</button>
+		
+        <button class="more btn material-symbols-outlined">
+more_vert</button>
     </div>
 		<?php
 

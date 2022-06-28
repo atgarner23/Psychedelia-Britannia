@@ -23,15 +23,24 @@ body {
   margin: 1em auto;
   padding: 1em;
   background-color: #fff7e7;
-  border-width: 1px;
+  border-width: 2px;
   border-style: solid;
-  border-image: #ddb892;
+  border-color: #c68225;
   border-radius: 23px;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
+.btn {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
 .button,
-button:not(.search-btn) {
+button:not(.btn) {
   display: block;
   width: fit-content;
   padding: 0.5em 1em;
@@ -43,13 +52,13 @@ button:not(.search-btn) {
   border: none;
 }
 .button:link, .button:visited,
-button:not(.search-btn):link,
-button:not(.search-btn):visited {
+button:not(.btn):link,
+button:not(.btn):visited {
   color: black;
   text-decoration: none;
 }
 .button::after,
-button:not(.search-btn)::after {
+button:not(.btn)::after {
   content: "";
   background: #c68225;
   position: absolute;
@@ -61,8 +70,8 @@ button:not(.search-btn)::after {
   z-index: -1;
 }
 .button:hover::after, .button:focus::after,
-button:not(.search-btn):hover::after,
-button:not(.search-btn):focus::after {
+button:not(.btn):hover::after,
+button:not(.btn):focus::after {
   content: "";
   position: absolute;
   top: -4px;
@@ -74,6 +83,13 @@ button:not(.search-btn):focus::after {
   z-index: -1;
   animation: animatedgradient 1.5s ease alternate infinite;
   background-size: 200% 200%;
+}
+
+input.button {
+  border: 2px solid #c68225;
+}
+input.button:hover, input.button:active {
+  background-color: #e6ccb2;
 }
 
 .flex {
@@ -154,6 +170,35 @@ img {
 
 img.icon {
   width: 1rem;
+}
+
+.post-date {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  font-size: 0.75rem;
+  color: black;
+}
+
+.author-name {
+  font-size: 1.5rem;
+}
+.author-name:first-letter {
+  text-transform: capitalize;
+}
+
+.post-title {
+  font-size: 2.25rem;
+}
+.post-title:first-letter {
+  text-transform: capitalize;
+}
+
+.post-sub {
+  font-size: 1.75rem;
+}
+
+.card-content + a:hover {
+  text-decoration: underline;
 }
 
 .post-descrip {
@@ -317,6 +362,29 @@ nav a[href*="main-feed.php"] {
   border: 0;
   background: transparent;
   border-radius: 50%;
+}
+
+.local-nav ul {
+  width: 80%;
+  margin: 1em auto;
+}
+.local-nav ul li a {
+  padding: 0.5em;
+  border: 2px solid #c68225;
+  background-color: #fff7e7;
+  border-radius: 5px;
+}
+.local-nav ul li a:hover {
+  color: #fff7e7;
+  background-color: #ddb892;
+}
+
+.local-nav .btn {
+  background: #fff7e7;
+  border: 2px solid #c68225;
+  border-radius: 5px;
+  padding: 0 0.25em;
+  margin-inline: 0.25em;
 }
 
 /*# sourceMappingURL=style.css.map */
