@@ -71,7 +71,7 @@ if (isset($_POST['did_submit'])) {
 } //end if did edit
 
 //author of the post or the admin
-$result = $DB->prepare('SELECT *
+/*$result = $DB->prepare('SELECT *
                         FROM posts
                         WHERE user_id = :user_id
                         LIMIT 1');
@@ -86,4 +86,4 @@ if ($result->rowCount()) {
 } else {
     //security! you aren't the author of this post
     exit('You are not allowed to edit this post.');
-}
+}*/

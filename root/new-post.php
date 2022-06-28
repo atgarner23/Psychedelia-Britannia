@@ -7,6 +7,8 @@ require_once('includes/functions.php');
 $logged_in_user = check_login();
 $user_id = $logged_in_user['user_id'];
 
+require('includes/parse-new-post.php');
+
 require('includes/header.php');
 //kill the page if not logged in
 if (!$logged_in_user) {
@@ -15,7 +17,7 @@ if (!$logged_in_user) {
 ?>
 
 <main class="new-post-content card">
-    <?php require('includes/parse-new-post.php'); ?>
+    
     <h2>Create a New Post:</h2>
     <?php show_feedback($feedback, $feedback_class, $errors); ?>
     <form action="new-post.php" method="post">

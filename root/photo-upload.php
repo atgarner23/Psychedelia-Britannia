@@ -2,6 +2,9 @@
 require('includes/CONFIG.php');
 require_once('includes/functions.php');
 $logged_in_user = check_login();
+
+require('includes/parse-upload.php');
+
 require('includes/header.php');
 //kill the page if not logged in
 if (!$logged_in_user) {
@@ -11,7 +14,7 @@ if (!$logged_in_user) {
 
 <main class="content">
     <div class="card">
-    <?php require('includes/parse-upload.php'); ?>
+    
     <h2>Add Post Photo</h2>
     <?php echo show_feedback($feedback, $feedback_class, $errors);
     ?>
@@ -23,9 +26,7 @@ if (!$logged_in_user) {
         <input type="hidden" name="did_upload" value="1">
     </form>
     </div>
-    <div class="card">
-        <?php require('includes/debug-output.php'); ?>
-    </div>
+    
 </main>
 <?php
 require('includes/aside.php');

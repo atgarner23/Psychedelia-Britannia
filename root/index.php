@@ -1,4 +1,3 @@
-<!-- TODO: add in logged in user function to only show this page to users that aren't logged in or don't have an account -->
 <?php 
 //includes
 require('includes/CONFIG.php');
