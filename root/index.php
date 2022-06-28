@@ -14,7 +14,7 @@ require('includes/header-no-login.php');
         <div class="main-content card">
             <div class="hero">
                 <div class="hero-content">
-                    <h2 class="hero-logo">Psychedelia Brittania</h2>
+                    <h2 class="hero-logo"><img src="images/logo-large-brown.svg" alt="Psychedelia Brittania"></h2>
                     <p class="hero-body">100&percnt; Private. 100&percnt; Secure. 100&percnt; Free. The ultimate online resource for research, integration, and community surrounding plant medicines.</p>
                     <a href="register.php" class="button">Start Your Free Journal</a>
                 </div>

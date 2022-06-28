@@ -192,6 +192,33 @@ img.icon {
         padding: $gutter;
     }
 
+    h1 {
+        width: fit-content;
+    }
+
+    h1 a {
+        display: block;
+        text-indent: -9999px;
+        width: 2rem;
+        height: 3.25rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-image: url(../images/logo-small-brown.svg);
+    }
+
+    nav a {
+        color: $brown;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .button {
+        margin-top: $gutter;
+    }
+
     .main-content {
         position: relative;
         z-index: 0;
@@ -228,6 +255,15 @@ img.icon {
     .legal {
         margin: 0 auto;
         width: fit-content;
+
+        & * {
+            padding: $gutter*.25;
+        }
+
+        & ul {
+            display: flex;
+            gap: $gutter;
+        }
     }
 }
 

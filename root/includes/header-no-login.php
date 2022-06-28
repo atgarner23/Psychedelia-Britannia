@@ -15,7 +15,7 @@
     <header>
         <nav class="log-in flex justify-sp-bt">
             <h1 class="logo"><a href="index.php">Psychedelia Brittania</a></h1>
-            <ul class="flex gap">
+            <ul class="flex gap align-c">
                 <li><a href="login.php">Log In</a></li>
                 <li><a href="register.php">Sign Up</a></li>
             </ul>

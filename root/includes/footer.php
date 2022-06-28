@@ -8,7 +8,7 @@
                 <li><a href="tos.php">Legal Disclaimer</a></li>
             </ul>
             <small>&copy; Psychedelia Brittania 2022</small>
-            <small><a href="https://www.agarnerdesigns.com">Site Design by A. Garner Designs</a></small>
+            <small>Site Design by<a href="https://www.agarnerdesigns.com"> A. Garner Designs</a></small>
         </div>
     </footer>
 </body>
