@@ -1,8 +1,7 @@
 <aside>
-        <form action="search.php" method="get" class="searchform">
-            <label for="" class="screen-reader-text">Search</label>
-            <input type="search" name="phrase" id="phrase">
-            <button type="submit">Search</button>
+<form action="search.php" method="get" class="searchform">
+            <input type="search" name="phrase" id="phrase" class="search-input" placeholder="Search..">
+            <button type="submit" class="search-btn material-symbols-outlined">search</button>
         </form>
 
 

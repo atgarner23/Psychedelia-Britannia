@@ -12,6 +12,11 @@ body {
     font-family: $open-sans;
 }
 
+.material-symbols-outlined {
+    color: $brown;
+}
+
+
 .container {
     display: grid;
     grid-template-columns: 10% 60% 30%;
@@ -23,8 +28,8 @@ body {
 }
 
 .button,
-button {
-    @include button($light-blue, $brown, $gutter, $gradient-bl, $border-size, $border-radius);
+button:not(.search-btn) {
+    @include button($dark-beige, $brown, $gutter, $gradient-bl, $border-size, $border-radius);
 }
 
 .flex {
@@ -87,6 +92,16 @@ aside {
     padding: $gutter;
     top: 0;
     left: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $lisbeth;
+    color: $brown;
 }
 
 img {
@@ -296,6 +311,28 @@ nav a[href*="main-feed.php"] {
 
     &[href="NOTIFICATIONS PAGE"] {
         background-image: url(../images/notification-icon.svg);
+    }
+
+}
+
+.searchform {
+    display: flex;
+    border: 2px solid $dark-beige;
+    border-radius: 500px;
+    overflow: hidden;
+
+    & .search-input {
+        flex-grow: 1;
+        border: 0;
+        border-radius: 500px;
+        background: transparent;
+    }
+
+    & .search-btn {
+        cursor: pointer;
+        border: 0;
+        background: transparent;
+        border-radius: 50%;
     }
 
 }

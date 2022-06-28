@@ -1,8 +1,7 @@
 <aside>
         <form action="search.php" method="get" class="searchform">
-            <label for="" class="screen-reader-text">Search</label>
-            <input type="search" name="phrase" id="phrase">
-            <button type="submit">Search</button>
+            <input type="search" name="phrase" id="phrase" class="search-input" placeholder="Search..">
+            <button type="submit" class="search-btn material-symbols-outlined">search</button>
         </form>
         <div class="trending-articles">
             <h2>Trending Articles</h2>
@@ -12,6 +11,7 @@
 	$result = $DB->prepare('SELECT posts.*
 							FROM posts
 							WHERE posts.is_published = 1
+                            AND posts.is_public = 1
 							ORDER BY posts.date DESC
 							LIMIT 3');
 	$result->execute();
