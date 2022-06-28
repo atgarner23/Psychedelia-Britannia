@@ -71,7 +71,7 @@
                     //make variables from the array keys
                     extract($row);
             ?>
-            <div class="follow-user">
+            <div class="follow-user flex justify-sp-bt">
                 <a href="profile.php?user_id=<?php echo $user_id; ?>">
                     <span>
                         <span class="flex gap">
@@ -81,7 +81,7 @@
                         <p><?php echo $bio; ?></p>
                     </span>
                 </a>
-                <button>FOLLOW</button>
+                <button class="btn material-symbols-outlined">add_circle</button>
             </div>
             <?php 
                 }//end while

@@ -40,6 +40,10 @@ button:not(.btn) {
     @include button($dark-beige, $brown, $gutter, $gradient-bl, $border-size, $border-radius);
 }
 
+.log-out {
+    margin: $gutter*.5;
+}
+
 input.button {
     border: 2px solid $brown;
 
@@ -111,6 +115,15 @@ aside {
     padding: $gutter;
     top: 0;
     left: 0;
+
+    & a:hover {
+        text-decoration: underline;
+    }
+}
+
+footer a:hover {
+    text-decoration: underline;
+
 }
 
 h1,
@@ -206,6 +219,10 @@ img.icon {
         background: $dark-beige;
         margin: 0;
         padding: $gutter $gutter*2;
+
+        a:hover {
+            text-decoration: underline;
+        }
     }
 
     .legal {
@@ -371,6 +388,7 @@ nav a[href*="main-feed.php"] {
     border: 2px solid $dark-beige;
     border-radius: 500px;
     overflow: hidden;
+    margin-bottom: $gutter*.5;
 
     & .search-input {
         flex-grow: 1;
@@ -413,4 +431,54 @@ nav a[href*="main-feed.php"] {
     border-radius: 5px;
     padding: 0 $gutter*.25;
     margin-inline: $gutter*.25;
+}
+
+// Aside styles
+.trending-articles {
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: $gutter*.25;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+
+        &:first-letter {
+            text-transform: capitalize;
+        }
+    }
+}
+
+.topics {
+    h2 {
+        font-size: 1.5rem;
+        margin-block: $gutter*.25;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.suggested-follow {
+    h2 {
+        font-size: 1.5rem;
+        margin-block: $gutter*.25;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+
+        &:first-letter {
+            text-transform: capitalize;
+        }
+    }
+
+    a {
+        margin-block: $gutter*.25;
+    }
+
+    p {
+        font-size: .75rem;
+    }
 }

@@ -17,12 +17,14 @@
                 extract($row);
          ?>
         <div class="author">
-            <div class="flex">
+        <div class="flex justify-sp-bt align-c">
+                <div class="flex gap align-c">
                     <?php show_profile_pic($profile_pic, 'round', $username, 25); ?>
                     <h4 class="author-name"><?php echo $username; ?></h4>
+                    </div>
+                    <button class="btn material-symbols-outlined">add_circle</button>
             </div>
             <p class="bio"><?php echo $bio; ?></p>
-            <button>FOLLOW</button>
             <?php
                }
             }
@@ -39,6 +41,7 @@
 	$result = $DB->prepare('SELECT posts.*
 							FROM posts
 							WHERE posts.is_published = 1
+                            AND posts.is_public = 1
 							ORDER BY posts.date DESC
 							LIMIT 3');
 	$result->execute();
